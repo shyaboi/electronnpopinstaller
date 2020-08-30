@@ -38,7 +38,7 @@ case "$response" in
     echo see the node installer pop up.
         start node.msi
     read -n 1 -s -r -p "When node is done installing, Press any key to continue"
-        ;;
+      npx npop  ;;
     *)
        echo byeeeeeeeeeee
         ;;

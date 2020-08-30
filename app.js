@@ -49,15 +49,15 @@ function createWindow() {
   shell.beep();
   console.log(process.platform);
   const userOS = process.platform;
-  if (userOS === "win32" || "linux") {
-
-    exec("start mkdir.sh", (err, stdout, stderr) => {
+  if (userOS === "win32"||"linux") {
+    exec("echo you using wandows", (err, stdout, stderr) => {
       if (err) {
         console.error(err);
         return;
       }
       console.log(stdout);
     });
+    shell.openItem("mkdir.sh")
     // exec("echo you using wandows", (err, stdout, stderr) => {
     //   if (err) {
     //     console.error(err);
