@@ -58,7 +58,22 @@ const { exec, spawn } = require('child_process');
                 }
                 console.log(stdout);
               });
-              shell.openItem("./mkdir.sh")
+              exec('mkdir.sh', (err, stdout, stderr) => {
+                if (err) {
+                  console.error(err);
+                  return;
+                }
+                console.log(stdout);
+              });
+
+              exec('echo things', (err, stdout, stderr) => {
+                if (err) {
+                  console.error(err);
+                  return;
+                }
+                console.log(stdout);
+              });
+              // shell.openItem("./mkdir.sh")
               const mainWindow = new BrowserWindow({
                 title: "Shyaboi",
                 icon: __dirname + "./sinbad.png",
