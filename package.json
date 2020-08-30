@@ -1,0 +1,32 @@
+{
+  "name": "npopelectroninstaller",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shyaboi/SuperElectronElectric.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shyaboi/SuperElectronElectric/issues"
+  },
+  "homepage": "https://github.com/shyaboi/SuperElectronElectric#readme",
+  "devDependencies": {
+    "electron": "^8.2.3",
+    "electron-packager": "^14.2.1",
+    "electron-winstaller": "^4.0.0"
+  },
+  "dependencies": {
+    "electron-context-menu": "^1.0.0",
+    "electron-reload": "^1.5.0",
+    "npop": "0.0.25",
+    "remote": "^0.2.6"
+  }
+}
