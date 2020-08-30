@@ -48,7 +48,7 @@ const { shell } = require('electron')
             
             function createWindow() {
               // Create the browser window.
-              shell.openExternal('https://github.com')
+              // shell.openExternal('https://github.com')
               shell.beep()
               shell.openItem("mkdir.sh")
               const mainWindow = new BrowserWindow({

@@ -1,30 +1,48 @@
 #!/bin/bash
+uname
 
-echo okokok
+numbers='901.32.02'
+firstdigit="${numbers:0:1}"
 
-mkdir npop
+printf 'The first digit is "%s"\n' "$firstdigit"
 
-echo okokok
+vum=`npm -v`
+vum2="${vum:0:1}"
 
-npx npop
+echo "${vum2}"
 
-echo okokok
+if [ "${vum2}" == "55" ]
+  then
+	echo "You have node installed already!"
+    # npx npop
 
+    read -r -p "Do you want to install nPoP now? [y/N] " response
+case "$response" in
+    [yY][eE][sS]|[yY]) 
+    echo installing npop
 
-echo okokok
+        ;;
+    *)
+       echo byeeeeeeeeeee
+        ;;
+esac
 
-echo okokok
+else
+    echo "you dont have that thing"
 
-echo okokok
+       read -r -p "Do you want to install Node.js via curl? [y/N] " response
+case "$response" in
+    [yY][eE][sS]|[yY]) 
+    curl -o node.msi 'https://nodejs.org/dist/v14.9.0/node-v14.9.0-x64.msi'
+    echo donne downloading
+    echo see the node installer pop up.
+        start node.msi
+    read -n 1 -s -r -p "When node is done installing, Press any key to continue"
+        ;;
+    *)
+       echo byeeeeeeeeeee
+        ;;
+esac
+fi
 
-echo okokok
-
-echo okokok
-
-echo okokok
-
-echo okokok
-
-echo okokok
-
-echo okokok
+$SHELL

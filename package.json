@@ -1,5 +1,6 @@
 {
   "name": "npopelectroninstaller",
+  "productName": "nPoP GUI installer",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -17,7 +18,6 @@
   "bugs": {
     "url": "https://github.com/shyaboi/SuperElectronElectric/issues"
   },
-  "homepage": "https://github.com/shyaboi/SuperElectronElectric#readme",
   "devDependencies": {
     "electron": "^8.2.3",
     "electron-packager": "^14.2.1",
