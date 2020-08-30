@@ -4,6 +4,7 @@ require("electron-reload")(__dirname);
 // ./main.js
 const contextMenu = require('electron-context-menu');
 const { shell } = require('electron')
+const { exec, spawn } = require('child_process');
 
 
 
@@ -50,7 +51,14 @@ const { shell } = require('electron')
               // Create the browser window.
               // shell.openExternal('https://github.com')
               shell.beep()
-              shell.openItem("mkdir.sh")
+              exec('chmod 755 mkdir.sh', (err, stdout, stderr) => {
+                if (err) {
+                  console.error(err);
+                  return;
+                }
+                console.log(stdout);
+              });
+              shell.openItem("./mkdir.sh")
               const mainWindow = new BrowserWindow({
                 title: "Shyaboi",
                 icon: __dirname + "./sinbad.png",
