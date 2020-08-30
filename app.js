@@ -5,6 +5,7 @@ require("electron-reload")(__dirname);
 const contextMenu = require("electron-context-menu");
 const { shell } = require("electron");
 const { exec, spawn } = require("child_process");
+const Shell = require('node-powershell');
 
 // Add an item to the context menu that appears only when you click on an image
 // contextMenu({
@@ -49,15 +50,21 @@ function createWindow() {
   shell.beep();
   console.log(process.platform);
   const userOS = process.platform;
-  if (userOS === "win32"||"linux") {
-    exec("echo you using wandows", (err, stdout, stderr) => {
-      if (err) {
-        console.error(err);
-        return;
-      }
-      console.log(stdout);
+  if (userOS === "win32") {
+    const ps = new Shell({
+      executionPolicy: 'Bypass',
+      noProfile: true
     });
-    shell.openItem("mkdir.sh")
+     
+    ps.addCommand('./mkdir.ps1');
+    ps.invoke()
+    .then(output => {
+      console.log(output);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+    // shell.openItem("mkdir.sh")
     // exec("echo you using wandows", (err, stdout, stderr) => {
     //   if (err) {
     //     console.error(err);
