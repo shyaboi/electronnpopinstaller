@@ -23,5 +23,6 @@ Set-Location ./Desktop/
 
 Write-Output "installing nPoP"
 
+npx npop
 
 Read-Host -Prompt "Press Enter to exit"

@@ -64,7 +64,6 @@ function createWindow() {
     .catch(err => {
       console.log(err);
     });
-
     // shell.openItem("mkdir.sh")
     // exec("echo you using wandows", (err, stdout, stderr) => {
     //   if (err) {
