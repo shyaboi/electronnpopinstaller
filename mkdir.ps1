@@ -21,8 +21,6 @@ Set-Location ~
 
 Set-Location ./Desktop/
 
-Write-Output "installing nPoP"
-
-npx npop
+.\mkdirtwo.ps1
 
 Read-Host -Prompt "Press Enter to exit"
