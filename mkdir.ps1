@@ -2,14 +2,14 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 
 Write-Output "balls"
 
-# $url = "https://nodejs.org/dist/v14.9.0/node-v14.9.0-x64.msi"
-# $output = "$PSScriptRoot\node.msi"
-# $start_time = Get-Date
+$url = "https://nodejs.org/dist/v14.9.0/node-v14.9.0-x64.msi"
+$output = "$PSScriptRoot\node.msi"
+$start_time = Get-Date
 
-# Import-Module BitsTransfer
-# Start-BitsTransfer -Source $url -Destination $output
-# #OR
-# Start-BitsTransfer -Source $url -Destination $output -Asynchronous
+Import-Module BitsTransfer
+Start-BitsTransfer -Source $url -Destination $output
+#OR
+Start-BitsTransfer -Source $url -Destination $output -Asynchronous
 
 Write-Output "Time taken: $((Get-Date).Subtract($start_time).Seconds) second(s)"
 
