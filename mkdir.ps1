@@ -1,16 +1,27 @@
 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit }
 
-echo "balls"
+Write-Output "balls"
 
-msiexec /i "C:\Users\Beast\Desktop\code\JS\muhprojects\npopelectroninstaller\node.msi" /qn /norestart
+$url = "https://nodejs.org/dist/v14.9.0/node-v14.9.0-x64.msi"
+$output = "$PSScriptRoot\node.msi"
+$start_time = Get-Date
 
-echo "installed nodjs"
+Import-Module BitsTransfer
+Start-BitsTransfer -Source $url -Destination $output
+#OR
+Start-BitsTransfer -Source $url -Destination $output -Asynchronous
 
-cd ~
+Write-Output "Time taken: $((Get-Date).Subtract($start_time).Seconds) second(s)"
 
-cd ./Desktop/
+msiexec /i "$PSScriptRoot\node.msi" /qn /norestart | Out-Null
 
-echo "installing nPoP"
+Write-Output "installed nodjs"
+
+Set-Location ~
+
+Set-Location ./Desktop/
+
+Write-Output "installing nPoP"
 
 npx npop
 
