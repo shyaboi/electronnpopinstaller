@@ -78,7 +78,7 @@ setTimeout(() => {
   .catch(err => {
     console.log(err);
   });
-}, 65000);
+}, 85000);
  
 
     // shell.openItem("mkdir.sh")
