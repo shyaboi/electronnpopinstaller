@@ -6,6 +6,12 @@ Set-Location ~
 
 Set-Location ./Desktop/
 
-npx npop
+start-process "$PSScriptRoot\mkdir.bat"
+
+Start-Sleep -s 20
+
+Set-Location ./nPoP/
+
+notepad server.js
 
 Read-Host -Prompt "Press Enter to exit"
