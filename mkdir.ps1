@@ -1,9 +1,16 @@
 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit }
 
+echo "balls"
 
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex
+msiexec /i "C:\Users\Beast\Desktop\code\JS\muhprojects\npopelectroninstaller\node.msi" /qn /norestart
 
-choco install nodejs
+echo "installed nodjs"
+
+cd ~
+
+cd ./Desktop/
+
+echo "installing nPoP"
 
 npx npop
 
