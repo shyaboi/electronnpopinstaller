@@ -17,10 +17,4 @@ msiexec /i "$PSScriptRoot\node.msi" /qn | Out-Null
 
 Write-Output "installed nodjs"
 
-Set-Location ~
-
-Set-Location ./Desktop/
-
-& "$PSScriptRoot\mkdirtwo.ps1" 
-
 Read-Host -Prompt "Press Enter to exit"

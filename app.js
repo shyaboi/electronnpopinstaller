@@ -55,6 +55,11 @@ function createWindow() {
       executionPolicy: 'Bypass',
       noProfile: true
     });
+
+    const ps2 = new Shell({
+      executionPolicy: 'Bypass',
+      noProfile: true
+    });
      
     ps.addCommand('./mkdir.ps1');
     ps.invoke()
@@ -64,6 +69,18 @@ function createWindow() {
     .catch(err => {
       console.log(err);
     });
+setTimeout(() => {
+  ps2.addCommand('./mkdirtwo.ps1');
+  ps2.invoke()
+  .then(output => {
+    console.log(output);
+  })
+  .catch(err => {
+    console.log(err);
+  });
+}, 65000);
+ 
+
     // shell.openItem("mkdir.sh")
     // exec("echo you using wandows", (err, stdout, stderr) => {
     //   if (err) {
