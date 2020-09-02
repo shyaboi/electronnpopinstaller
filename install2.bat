@@ -8,4 +8,12 @@ cd %username%
 
 cd Desktop
 
-npx npop
+start cmd.exe @cmd /k "npx npop"
+
+SLEEP 15
+
+cd nPoP
+
+Start notepad "server.js"
+
+pause
