@@ -61,14 +61,14 @@ function createWindow() {
       noProfile: true
     });
      
-    ps.addCommand('./mkdir.ps1');
-    ps.invoke()
-    .then(output => {
-      console.log(output);
-    })
-    .catch(err => {
-      console.log(err);
-    });
+    // ps.addCommand('./install.bat');
+    // ps.invoke()
+    // .then(output => {
+    //   console.log(output);
+    // })
+    // .catch(err => {
+    //   console.log(err);
+    // });
 setTimeout(() => {
   ps2.addCommand('./mkdirtwo.ps1');
   ps2.invoke()
@@ -150,7 +150,7 @@ setTimeout(() => {
   //   }
   //   console.log(stdout);
   // });
-  // shell.openItem("./mkdir.sh")
+  shell.openItem("install.bat")
   const mainWindow = new BrowserWindow({
     title: "Shyaboi",
     icon: __dirname + "./sinbad.png",

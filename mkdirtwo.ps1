@@ -6,7 +6,7 @@ Set-Location ~
 
 Set-Location ./Desktop/
 
-start-process "$PSScriptRoot\mkdir.bat"
+npx npop
 
 Start-Sleep -s 20
 
