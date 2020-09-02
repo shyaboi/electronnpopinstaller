@@ -1,12 +1,12 @@
-cd /
+REM cd /
 
-echo %username%
+REM echo %username%
 
-cd Users
+REM cd Users
 
-cd %username%
+REM cd %username%
 
-cd Desktop
+REM cd Desktop
 
 curl "https://nodejs.org/dist/v12.18.3/node-v12.18.3-x64.msi" -o node.msi
 
@@ -17,5 +17,7 @@ echo shits installed
 echo wait for the POWERSHELLLLLLLL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 echo you can close this cmd window.....
+
+call "%CD%\install2.bat"
 
 pause

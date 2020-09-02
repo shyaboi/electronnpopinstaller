@@ -150,10 +150,11 @@ function createWindow() {
   //   }
   //   console.log(stdout);
   // });
-  shell.openItem("install.bat")
-const dinus = ()=> {
-  shell.openItem("install2.bat")
-}
+shell.openItem("install.bat")
+
+const dinus = ()=> {shell.openItem("install2.bat")}
+
+
   setTimeout(() => {
   dinus()
   }, 66000);
