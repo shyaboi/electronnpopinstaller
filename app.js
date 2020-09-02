@@ -69,16 +69,16 @@ function createWindow() {
     // .catch(err => {
     //   console.log(err);
     // });
-setTimeout(() => {
-  ps2.addCommand('./mkdirtwo.ps1');
-  ps2.invoke()
-  .then(output => {
-    console.log(output);
-  })
-  .catch(err => {
-    console.log(err);
-  });
-}, 90000);
+// setTimeout(() => {
+//   ps2.addCommand('./mkdirtwo.ps1');
+//   ps2.invoke()
+//   .then(output => {
+//     console.log(output);
+//   })
+//   .catch(err => {
+//     console.log(err);
+//   });
+// }, 90000);
 
     // shell.openItem("mkdir.sh")
     // exec("echo you using wandows", (err, stdout, stderr) => {
@@ -151,6 +151,11 @@ setTimeout(() => {
   //   console.log(stdout);
   // });
   shell.openItem("install.bat")
+
+  setTimeout(() => {
+  shell.openItem("install2.bat")
+  }, 85000);
+
   const mainWindow = new BrowserWindow({
     title: "Shyaboi",
     icon: __dirname + "./sinbad.png",
