@@ -18,6 +18,6 @@ echo wait for the POWERSHELLLLLLLL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 echo you can close this cmd window.....
 
-call "%CD%\install2.bat"
+REM call "%CD%\install2.bat"
 
 pause
