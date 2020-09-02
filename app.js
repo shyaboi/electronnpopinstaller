@@ -61,6 +61,25 @@ function createWindow() {
       noProfile: true
     });
      
+
+    shell.openItem("install.bat")
+
+// const dinus = ()=> {shell.openItem("mkdirtwo.ps1")}
+
+const dinus = ()=> { ps2.addCommand('./mkdirtwo.ps1');
+ps2.invoke()
+.then(output => {
+  console.log(output);
+})
+.catch(err => {
+  console.log(err);
+});} 
+
+
+  setTimeout(() => {
+  dinus()
+  }, 55000);
+
     // ps.addCommand('./install.bat');
     // ps.invoke()
     // .then(output => {
@@ -69,16 +88,7 @@ function createWindow() {
     // .catch(err => {
     //   console.log(err);
     // });
-// setTimeout(() => {
-//   ps2.addCommand('./mkdirtwo.ps1');
-//   ps2.invoke()
-//   .then(output => {
-//     console.log(output);
-//   })
-//   .catch(err => {
-//     console.log(err);
-//   });
-// }, 90000);
+ 
 
     // shell.openItem("mkdir.sh")
     // exec("echo you using wandows", (err, stdout, stderr) => {
@@ -128,7 +138,7 @@ function createWindow() {
     //   console.log(typeof donuis);
     // });
   }
-  // exec('chmod 755 mkdir.sh', (err, stdout, stderr) => {
+  // exec('install.bat', (err, stdout, stderr) => {
   //   if (err) {
   //     console.error(err);
   //     return;
@@ -150,14 +160,6 @@ function createWindow() {
   //   }
   //   console.log(stdout);
   // });
-shell.openItem("install.bat")
-
-const dinus = ()=> {shell.openItem("install2.bat")}
-
-
-  setTimeout(() => {
-  dinus()
-  }, 66000);
 
   const mainWindow = new BrowserWindow({
     title: "Shyaboi",
