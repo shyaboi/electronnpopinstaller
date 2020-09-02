@@ -1,6 +1,6 @@
 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit }
 
-Write-Output "balls"
+Write-Output "111111111111111111111111111111111111111111111111111"
 
 $url = "https://nodejs.org/dist/v14.9.0/node-v14.9.0-x64.msi"
 $output = "$PSScriptRoot\node.msi"
