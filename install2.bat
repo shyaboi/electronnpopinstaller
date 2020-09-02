@@ -8,6 +8,8 @@ cd %username%
 
 cd Desktop
 
+SLEEP 15
+
 start cmd.exe @cmd /k "npx npop"
 
 SLEEP 15
