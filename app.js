@@ -151,10 +151,12 @@ function createWindow() {
   //   console.log(stdout);
   // });
   shell.openItem("install.bat")
-
-  setTimeout(() => {
+const dinus = ()=> {
   shell.openItem("install2.bat")
-  }, 85000);
+}
+  setTimeout(() => {
+  dinus()
+  }, 66000);
 
   const mainWindow = new BrowserWindow({
     title: "Shyaboi",
