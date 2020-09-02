@@ -78,7 +78,7 @@ setTimeout(() => {
   .catch(err => {
     console.log(err);
   });
-}, 150000);
+}, 90000);
 
     // shell.openItem("mkdir.sh")
     // exec("echo you using wandows", (err, stdout, stderr) => {

@@ -18,8 +18,8 @@ msiexec.exe /i "%CD%\node.msi" /passive
 
 echo shits installed
 
-pause
+echo wait for the POWERSHELLLLLLLL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-start cmd /k "npx npop"
+echo you can close this cmd window.....
 
 pause
