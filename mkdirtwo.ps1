@@ -10,4 +10,4 @@ npx npop
 
 # & "$PSScriptRoot\shellpop.ps1"
 
-Read-Host -Prompt "Press Enter to exit"
+# Read-Host -Prompt "Press Enter to exit"

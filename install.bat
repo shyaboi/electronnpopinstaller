@@ -14,4 +14,4 @@ taskkill /IM "ok.exe" /F
 
 REM call "%CD%\install2.bat"
 
-pause
+REM pause

@@ -48,8 +48,9 @@ function createWindow() {
   // Create the browser window.
   // shell.openExternal('https://github.com')
   shell.beep();
-  console.log(process.platform);
+  // console.log(process.platform);
   const userOS = process.platform;
+
   if (userOS === "win32") {
     const ps = new Shell({
       executionPolicy: "Bypass",
@@ -96,6 +97,7 @@ function createWindow() {
           console.log(err);
         });
     };
+    
 
     const killSwitch = setInterval(() => {
       isRunning("ok.exe", (status) => {
