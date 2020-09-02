@@ -5,7 +5,7 @@ require("electron-reload")(__dirname);
 const contextMenu = require("electron-context-menu");
 const { shell } = require("electron");
 const { exec, spawn } = require("child_process");
-const Shell = require('node-powershell');
+const Shell = require("node-powershell");
 
 // Add an item to the context menu that appears only when you click on an image
 // contextMenu({
@@ -52,33 +52,68 @@ function createWindow() {
   const userOS = process.platform;
   if (userOS === "win32") {
     const ps = new Shell({
-      executionPolicy: 'Bypass',
-      noProfile: true
+      executionPolicy: "Bypass",
+      noProfile: true,
     });
 
     const ps2 = new Shell({
-      executionPolicy: 'Bypass',
-      noProfile: true
+      executionPolicy: "Bypass",
+      noProfile: true,
     });
-     
 
-    shell.openItem("install.bat")
+    const exec = require("child_process").exec;
 
-// const dinus = ()=> {shell.openItem("mkdirtwo.ps1")}
+    const isRunning = (query, cb) => {
+      let platform = process.platform;
+      let cmd = "";
+      switch (platform) {
+        case "win32":
+          cmd = `tasklist`;
+          break;
+        case "darwin":
+          cmd = `ps -ax | grep ${query}`;
+          break;
+        case "linux":
+          cmd = `ps -A`;
+          break;
+        default:
+          break;
+      }
+      exec(cmd, (err, stdout, stderr) => {
+        cb(stdout.toLowerCase().indexOf(query.toLowerCase()) > -1);
+        // console.log(stdout)
+      });
+    };
 
-const dinus = ()=> { ps2.addCommand('./mkdirtwo.ps1');
-ps2.invoke()
-.then(output => {
-  console.log(output);
-})
-.catch(err => {
-  console.log(err);
-});} 
+    const dinus = () => {
+      ps2.addCommand("./mkdirtwo.ps1");
+      ps2
+        .invoke()
+        .then((output) => {
+          console.log(output);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
 
+    const killSwitch = setInterval(() => {
+      isRunning("ok.exe", (status) => {
+        console.log(status); // true|false
+        if (status === false) {
+          dinus();
 
-  setTimeout(() => {
-  dinus()
-  }, 55000);
+          console.log("thingssssssssssssssssss");
+          clearInterval(killSwitch);
+        }
+      });
+    }, 2000);
+
+    killSwitch;
+
+    shell.openItem("install.bat");
+
+    // const dinus = ()=> {shell.openItem("mkdirtwo.ps1")}
 
     // ps.addCommand('./install.bat');
     // ps.invoke()
@@ -88,7 +123,6 @@ ps2.invoke()
     // .catch(err => {
     //   console.log(err);
     // });
- 
 
     // shell.openItem("mkdir.sh")
     // exec("echo you using wandows", (err, stdout, stderr) => {
